@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./e2e/",
+        "paths": {
+            /* This mapping is relative to "baseUrl". */
+            // "@assets/*": ["assets/*"],
+            // "@constants/*": ["constants/*"],
+            // "@pages/*": ["pages/*"],
+            // "@components/*": ["pages/components/*"]
+        }
+    },
+    "include": [
+		"./e2e/**/*",
+		"eslint.config.mjs",
+	],
+    "exclude": [
+        "node_modules",
+    ]
+}
