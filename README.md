@@ -1,4 +1,4 @@
-# Interact Software Technical Test
+# SkyCell Technical Test
 
 ### Installation
 You need to have Node.js installed at least version 18+, preferably the latest LTS version. 
