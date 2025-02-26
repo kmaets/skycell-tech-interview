@@ -4,9 +4,9 @@
         "paths": {
             /* This mapping is relative to "baseUrl". */
             // "@assets/*": ["assets/*"],
-            // "@constants/*": ["constants/*"],
-            // "@pages/*": ["pages/*"],
-            // "@components/*": ["pages/components/*"]
+            "@testData/*": ["test-data/*"],
+            "@pages/*": ["pages/*"],
+            "@helpers/*": ["helpers/*"]
         }
     },
     "include": [

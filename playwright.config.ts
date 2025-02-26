@@ -4,9 +4,9 @@ import { defineConfig, devices } from '@playwright/test';
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-// import dotenv from 'dotenv';
-// import path from 'path';
-// dotenv.config({ path: path.resolve(__dirname, '.env') });
+import dotenv from 'dotenv';
+import path from 'path';
+dotenv.config({ path: path.resolve(__dirname, '.env') });
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -20,15 +20,15 @@ export default defineConfig({
 	/* Retry on CI only */
 	retries: process.env.CI ? 2 : 0,
 	/* Opt out of parallel tests on CI. */
-	workers: process.env.CI ? 1 : undefined,
-	timeout: 5 * 60 * 1000,
+	workers: process.env.CI ? 2 : undefined,
+	timeout: 2 * 60 * 1000,
 	expect: {
 		timeout: 10 * 1000,
 	},
 	/* Reporter to use. See https://playwright.dev/docs/test-reporters */
 	reporter: [
 		['html', { open: 'always' }],
-		['list', { printSteps: false }],
+		['list', { printSteps: true }],
 	],
 	/* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
 	use: {
@@ -37,6 +37,12 @@ export default defineConfig({
 
 		/* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
 		trace: 'on-first-retry',
+		/* Save a video along with the report after test run - avaialble in playwright-report folder */
+		video: {
+			mode: 'on',
+			size: { width: 1280, height: 720 }
+		},
+		screenshot: "off",
 	},
 
 	/* Configure projects for major browsers */

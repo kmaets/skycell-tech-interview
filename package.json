@@ -3,10 +3,15 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
-		"test": "npx playwright test",
-		"test-ui": "npx playwright test --ui",
-		"test-chrome": "npx playwright test --project=chromium",
-		"test-headed": "npx playwright test --project=chromium --headed"
+		"test": "npx playwright test filters.spec --project chromium",
+		"test-all-browsers": "npx playwright test filters.spec",
+		"test-chrome": "npx playwright test filters.spec --project chromium --headed",
+		"test-firefox": "npx playwright test filters.spec --project firefox --headed",
+		"test-webkit": "npx playwright test filters.spec --project webkit --headed",
+		"test-vsc-debug": "npx playwright test filters.spec --project chromium --headed",
+		"test-debug": "npx playwright test filters.spec --project chromium --headed --debug",
+		"test-ui": "npx playwright test filters.spec --ui",
+		"test-api": "npx playwright test api.spec --project chromium"
 	},
 	"author": "Kamil",
 	"license": "ISC",
@@ -17,6 +22,7 @@
 		"@types/node": "^22.13.4",
 		"@typescript-eslint/eslint-plugin": "^8.24.1",
 		"@typescript-eslint/parser": "^8.24.1",
+		"dotenv": "^16.4.7",
 		"eslint": "^9.20.1"
 	}
 }
